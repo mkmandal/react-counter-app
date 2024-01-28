@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import  "./index.css"
 import Header from './e-cart-components/Header';
+import BgChangerApp from './e-cart-components/BackgroundChange';
 
 function App() {
   
@@ -10,11 +11,12 @@ function App() {
   return (
     <>
     <Header/>
-      <h1>Counter App</h1>
-      <button>Counter is %:  {count}</button>
-      <div className='pd-2 bg-black-400'>{msg}</div>
+    
+    <h3 className='my-2 bg-blue-200 text-black font-bold '>Counter App</h3>
+      <button className='bg-indigo-500'>Counter is %:  {count}</button>
+      <div className='font-bold text-blue-900'>{msg}</div>
       <div className="card">
-          <button onClick={() => {
+          <button className='bg-orange-400 my-1 mx-1' onClick={() => {
             if(count>=20){
               setMsg("Count Exceeded !!")
               return;
@@ -27,7 +29,7 @@ function App() {
           Increase Count 
         </button>
 
-        <button className='bg-green' onClick={() => {
+        <button className='bg-green-400 my-1' onClick={() => {
             setMsg("")
             if(count==0){
              setMsg("Count Cannot Be Negative !!")
@@ -38,8 +40,13 @@ function App() {
           }}>
           Decrease Count
         </button>
-      </div>
-  
+      </div> 
+
+    
+
+      <h3 className='bg-blue-200 text-black font-bold'>Background Change App</h3>
+      <BgChangerApp/>
+     
     </>
   )
 }

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+.height{
+  height: 100vh;
+}
+
 #root {
   text-align: center;
 }
