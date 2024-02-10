@@ -2,12 +2,10 @@ import { useEffect, useState , useCallback, useRef} from "react";
 
 const PasswordGenerator = () => {
     
-    let charFlag=false;
-    let numFlag=false;
     const [length, setLength] = useState(8)
     const [Password,setPassword]=useState("");
-    const [isNumAllowed,setisNumAllowed]=useState(charFlag);
-    const [isSpecialCharAllowed,setIsSpecialCharAllowed]=useState(numFlag);
+    const [isNumAllowed,setisNumAllowed]=useState(false);
+    const [isSpecialCharAllowed,setIsSpecialCharAllowed]=useState(false);
     const alphabates="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     const number="1234567890";
     const specialChar="!@#$%^&*-_+=[]{}~`";
@@ -68,8 +66,8 @@ const PasswordGenerator = () => {
           />
           <label>Length: {length}</label>
           <input type="checkbox" defaultChecked={isSpecialCharAllowed} onClick={()=>{
-          charFlag = !charFlag
-         setIsSpecialCharAllowed(charFlag)
+          
+         setIsSpecialCharAllowed((state) => !state)
          }
         }></input>
         <label>Add Char</label>
@@ -77,8 +75,8 @@ const PasswordGenerator = () => {
     <span className="ml-2 pl-2">
       <input type="checkbox" defaultChecked={isNumAllowed} onClick={
         ()=>{
-            numFlag = !numFlag
-            setisNumAllowed(numFlag)
+            
+            setisNumAllowed((state) => !state)
          }
       }></input>
         <label className="ml-2 pl-2">Add Number</label>
