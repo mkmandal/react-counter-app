@@ -26,7 +26,6 @@ const PasswordGenerator = () => {
             pass += str.charAt(char)
          }
          setPassword(pass);
-         console.log(pass)
        }, [isNumAllowed, isSpecialCharAllowed, length,setPassword])
 
        const copyPasswordToClipboard = useCallback(() => {
